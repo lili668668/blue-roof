@@ -2,9 +2,10 @@
   "name": "blue-roof",
   "version": "1.0.0",
   "description": "A blog system",
-  "main": "index.js",
   "scripts": {
-    "test": "standard && mocha"
+    "test": "standard && mocha",
+    "dev": "npm test && backpack dev",
+    "start": "node build/main.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,9 @@
     "chai": "^4.1.2",
     "mocha": "^4.0.1",
     "standard": "^10.0.3"
+  },
+  "dependencies": {
+    "backpack-core": "^0.4.3",
+    "express": "^4.16.2"
   }
 }

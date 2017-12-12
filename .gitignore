@@ -1,2 +1,11 @@
+# vim temp file
 *.swp
+
+# dependencies
 node_modules
+
+# backpack build
+build
+
+# logs
+npm-debug.log
