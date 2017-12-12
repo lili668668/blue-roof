@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "A blog system",
   "scripts": {
-    "test": "standard && mocha",
+    "test": "standard --global describe --global it && mocha --recursive --timeout 15000 --exit",
     "dev": "npm test && backpack dev",
     "start": "node build/main.js"
+  },
+  "config": {
+    "db_username": "",
+    "db_password": ""
   },
   "repository": {
     "type": "git",
@@ -27,6 +31,8 @@
   },
   "dependencies": {
     "backpack-core": "^0.4.3",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mongoose": "^4.13.7",
+    "mpromise": "^0.5.5"
   }
 }
