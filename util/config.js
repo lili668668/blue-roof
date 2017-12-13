@@ -5,6 +5,9 @@ const config = {
     password: process.env.npm_package_config_db_password,
     host: 'localhost',
     port: '27017'
+  },
+  env: {
+    apiPath: 'http://localhost:3000'
   }
 }
 

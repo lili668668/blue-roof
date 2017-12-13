@@ -43,6 +43,7 @@
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
     "express": "^4.16.2",
+    "isomorphic-unfetch": "^2.0.0",
     "mongoose": "^4.13.7",
     "mpromise": "^0.5.5",
     "next": "^4.2.1",
