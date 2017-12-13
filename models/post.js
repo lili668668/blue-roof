@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
-const schema = mongoose.schema
+const dbConn = require('../util/db.js')
+const Schema = mongoose.Schema
 
-const postSchema = new schema({
+const postSchema = new Schema({
   title: { type: String, require: true },
   author: { type: String, require: true },
   content: { type: String, require: true },
@@ -9,6 +10,6 @@ const postSchema = new schema({
   updated: { type: Date }
 })
 
-const postModel = mongoose.model('Post', postSchema)
+const postModel = dbConn.model('Post', postSchema)
 
 module.exports = postModel
