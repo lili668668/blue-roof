@@ -9,10 +9,10 @@ const port = process.env.PORT || 3000
 
 app.set('port', port)
 
-app.use(bodyparser.json());
+app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({
   extended: true
-}));
+}))
 
 app.use('/api', api)
 
