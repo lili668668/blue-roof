@@ -4,8 +4,9 @@
   "description": "A blog system",
   "scripts": {
     "test": "standard --global describe --global it && mocha --recursive --timeout 15000 --exit",
-    "dev": "npm test && backpack dev",
-    "start": "node build/main.js"
+    "dev": "npm test && concurrently \"backpack dev\" \"next -p 5000\"",
+    "build": "backpack build && next build",
+    "start": "concurrently \"node build/main.js\" \"next start\""
   },
   "config": {
     "db_username": "",
@@ -25,15 +26,33 @@
   },
   "homepage": "https://github.com/lili668668/blue-roof#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "chai": "^4.1.2",
+    "html-webpack-plugin": "^2.30.1",
     "mocha": "^4.0.1",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
     "backpack-core": "^0.4.3",
     "body-parser": "^1.18.2",
+    "concurrently": "^3.5.1",
     "express": "^4.16.2",
     "mongoose": "^4.13.7",
-    "mpromise": "^0.5.5"
+    "mpromise": "^0.5.5",
+    "next": "^4.2.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "standard": {
+    "ignore": [
+      "/pages",
+      "/components"
+    ]
   }
 }
