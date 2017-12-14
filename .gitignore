@@ -7,8 +7,5 @@ node_modules
 # backpack build
 build
 
-# next build
-.next
-
 # logs
 npm-debug.log
