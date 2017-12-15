@@ -4,6 +4,17 @@ const router = Router()
 
 const PostModel = require('../../models/post.js')
 
+const mockPosts = [
+  {
+    title: 'OwO',
+    content: 'Deadline~ Deadline~ Coming Soon~ How I escape the Dealine~'
+  }
+]
+
+router.get('/mock_posts', (req, res, next) => {
+  res.json(mockPosts)
+})
+
 router.get('/posts', (req, res, next) => {
   PostModel.find({}, (err, posts) => {
     if (err) {
