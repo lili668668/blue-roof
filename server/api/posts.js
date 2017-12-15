@@ -7,7 +7,15 @@ const PostModel = require('../../models/post.js')
 const mockPosts = [
   {
     title: 'OwO',
-    content: 'Deadline~ Deadline~ Coming Soon~ How I escape the Dealine~'
+    author: 'ballfish',
+    content: 'Deadline~ Deadline~ Coming Soon~ How I escape the Dealine~',
+    created: Date.now()
+  },
+  {
+    title: 'OAO',
+    author: 'fishball',
+    content: 'Deadline~ Deadline~ Coming Soon~ How the work do you do~',
+    created: Date.now()
   }
 ]
 
