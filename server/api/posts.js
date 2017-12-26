@@ -4,25 +4,6 @@ const router = Router()
 
 const PostModel = require('../../models/post.js')
 
-const mockPosts = [
-  {
-    title: 'OwO',
-    author: 'ballfish',
-    content: 'Deadline~ Deadline~ Coming Soon~ How I escape the Dealine~',
-    created: Date.now()
-  },
-  {
-    title: 'OAO',
-    author: 'fishball',
-    content: 'Deadline~ Deadline~ Coming Soon~ How the work do you do~',
-    created: Date.now()
-  }
-]
-
-router.get('/mock_posts', (req, res, next) => {
-  res.json(mockPosts)
-})
-
 router.get('/posts', (req, res, next) => {
   PostModel.find({}, (err, posts) => {
     if (err) {
