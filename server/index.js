@@ -4,8 +4,8 @@ import bodyparser from 'body-parser'
 import api from './api'
 
 const app = express()
-const host = process.env.HOST || '127.0.0.1'
-const port = process.env.PORT || 3000
+const host = process.env.HOST || '0.0.0.0'
+const port = parseInt(process.env.PORT, 10) || 3000
 
 app.set('port', port)
 
@@ -24,3 +24,5 @@ app.use((req, res, next) => {
 app.use('/api', api)
 
 app.listen(port, host)
+
+console.log(host + ':' + port)

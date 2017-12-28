@@ -7,6 +7,9 @@
     "dev": "npm test && backpack dev",
     "start": "node build/main.js"
   },
+  "standard":{
+    "ignore": ["build/**/*.js"]
+  },
   "config": {
     "db_username": "",
     "db_password": ""
