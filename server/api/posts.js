@@ -1,6 +1,5 @@
-import { Router } from 'express'
-
-const router = Router()
+const express = require('express')
+const router = express.Router()
 
 const PostModel = require('../../models/post.js')
 
@@ -72,4 +71,4 @@ router.delete('/post/:id', (req, res, next) => {
   })
 })
 
-export default router
+module.exports = router

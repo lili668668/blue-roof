@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "A blog system",
   "scripts": {
-    "test": "standard --global describe --global it && mocha test",
-    "dev": "npm test && backpack dev",
-    "start": "node build/main.js"
+    "start": "node server/index.js"
   },
   "repository": {
     "type": "git",

@@ -1,9 +1,8 @@
-import { Router } from 'express'
+const express = require('express')
+const router = express.Router()
 
-import posts from './posts'
-
-const router = Router()
+const posts = require('./posts')
 
 router.use(posts)
 
-export default router
+module.exports = router

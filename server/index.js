@@ -1,7 +1,7 @@
-import express from 'express'
-import bodyparser from 'body-parser'
+const express = require('express')
+const bodyparser = require('body-parser')
 
-import api from './api'
+const api = require('./api')
 
 const app = express()
 const host = process.env.HOST || '0.0.0.0'
