@@ -7,13 +7,6 @@
     "dev": "npm test && backpack dev",
     "start": "node build/main.js"
   },
-  "standard":{
-    "ignore": ["build/**/*.js"]
-  },
-  "config": {
-    "db_username": "",
-    "db_password": ""
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lili668668/blue-roof.git"
@@ -29,11 +22,9 @@
   "homepage": "https://github.com/lili668668/blue-roof#readme",
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^4.0.1",
-    "standard": "^10.0.3"
+    "mocha": "^4.0.1"
   },
   "dependencies": {
-    "backpack-core": "^0.4.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mongoose": "^4.13.7",
