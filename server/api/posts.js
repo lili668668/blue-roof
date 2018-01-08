@@ -6,8 +6,9 @@ const PostModel = require('../../models/post.js')
 router.get('/posts', (req, res, next) => {
   PostModel.find({}, (err, posts) => {
     if (err) {
-      res.json({error: err.name}, 500)
+      return next(err)
     }
+
     res.json({posts: posts})
   })
 })
@@ -16,7 +17,7 @@ router.get('/post/:id', (req, res, next) => {
   var id = req.params.id
   PostModel.findById(id, (err, post) => {
     if (err) {
-      res.json({error: err.name}, 500)
+      return next(err)
     }
     res.json({post: post})
   })
@@ -27,7 +28,7 @@ router.post('/post', (req, res, next) => {
   var post = new PostModel(data)
   post.save((err, result) => {
     if (err) {
-      res.json({error: err.name}, 500)
+      return next(err)
     }
     res.json({post: result})
   })
@@ -38,7 +39,7 @@ router.put('/post/:id', (req, res, next) => {
   var data = req.body
   PostModel.findById(id, (err, post) => {
     if (err) {
-      res.json({error: err.name}, 500)
+      return next(err)
     }
     post.title = data.title
     post.author = data.author
@@ -48,7 +49,7 @@ router.put('/post/:id', (req, res, next) => {
 
     post.save((err, result) => {
       if (err) {
-        res.json({error: err.name}, 500)
+        return next(err)
       }
       res.json({post: result})
     })
@@ -59,12 +60,12 @@ router.delete('/post/:id', (req, res, next) => {
   var id = req.params.id
   PostModel.findById(id, (err, post) => {
     if (err) {
-      res.json({error: err.name}, 500)
+        return next(err)
     }
 
     post.remove((err, result) => {
       if (err) {
-        res.json({error: err.name}, 500)
+        return next(err)
       }
       res.json(result)
     })

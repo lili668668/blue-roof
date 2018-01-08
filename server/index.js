@@ -3,6 +3,7 @@ const bodyparser = require('body-parser')
 const cors = require('cors')
 const helmet = require('helmet')
 
+const handleError = require('../service/handleError')
 const api = require('./api')
 
 const app = express()
@@ -19,6 +20,9 @@ app.use(bodyparser.urlencoded({
 app.use(cors())
 app.use(helmet())
 
+app.use(handleError)
+
 app.use('/api', api)
+
 
 app.listen(port, host, () => console.log('Listen on ' + host + ':' + port))
